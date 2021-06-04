@@ -1,0 +1,63 @@
+.hunter {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/images/hunter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hunter .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hunter-title {
+  font-size: 96px;
+  line-height: 120%;
+  color: #fff;
+  align-items: center;
+  max-width: 500px;
+}
+
+.hunter-title span {
+  position: relative;
+  display: inline-block;
+}
+
+.hunter-title span::after {
+  content: "\00AE";
+  position: absolute;
+  top: -35px;
+  right: -30px;
+  font-size: 30px;
+}
+
+.hunter-text {
+  margin-top: 300px;
+  font-size: 48px;
+  color: #fff;
+  text-align: right;
+  max-width: 400px;
+}
+
+.left-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.link {
+  display: inline-block;
+  padding: 10px 32px;
+  color: #fff;
+  background: red;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "Noto Sans JP", sans-serif;
+  border-radius: 4px;
+}
+
+.color_red {
+  color: red;
+}

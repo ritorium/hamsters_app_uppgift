@@ -1,0 +1,13 @@
+.statistics-card {
+  background: #c4c4c4;
+  padding: 30px 50px;
+}
+
+.statistics-card-title {
+  text-transform: uppercase;
+  color: #000;
+}
+.list-hamster .hamster {
+  display: flex;
+  justify-content: space-between;
+}

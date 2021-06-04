@@ -1,0 +1,71 @@
+.hamster-cart {
+  position: relative;
+  border: 15px solid #ccc;
+  width: calc((100% - 60px) / 3);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hamster-cart:hover > .overlay {
+  transform: translateY(0);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.7s ease;
+}
+
+.overlay.active {
+  transform: translateY(0);
+}
+
+.hamster-cart-title,
+.overlay p {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+}
+
+.hamster-cart-title {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.hamstrar-title {
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: calc((100% - 60px) / 3);
+  padding: 20px;
+}
+
+.box-battle .hamster-cart {
+  margin-bottom: 0;
+}
+
+.box-battle .hamster-cart.active {
+  border-color: red;
+}
+
+.btn-next {
+  padding: 5px 15px;
+  border-radius: 4px;
+  background: green;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+}

@@ -1,0 +1,52 @@
+.history {
+  background: #c4c4c4;
+  padding: 30px 50px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.history-row,
+.history-header {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+.history-body {
+  max-height: 500px;
+  overflow: auto;
+}
+
+.col {
+  width: 50%;
+}
+
+.history-header-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.history-cart {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.history-row {
+  position: relative;
+}
+
+.history-row .col {
+  display: flex;
+  justify-content: center;
+}
+
+.history-cart-title {
+  padding: 20px 0 15px 0;
+  text-align: center;
+}
+
+.history-row:hover .btn-delete {
+  opacity: 1;
+}
