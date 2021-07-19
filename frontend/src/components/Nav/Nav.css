@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: inherit;
-}
+  }
 
 .list-items .item {
   list-style: none;
@@ -14,11 +14,11 @@
   text-decoration: none;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 18px;
-  color: #fff;
+  color: red;
 }
 
 .list-items a.active {
-  color: #2f80ed;
+  color: #fff
 }
 
 .item a {

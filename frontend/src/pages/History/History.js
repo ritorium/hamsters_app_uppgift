@@ -9,54 +9,57 @@ import { BASE_URL, MATCHES_URL } from "../../constants";
 import "./History.css";
 
 export default function History() {
-  let [matches, setMatches] = useState([]);
-  let [loading, setLoading] = useState(true);
+	const controller = new AbortController();
+	const signal = controller.signal;
 
-  const getMatches = () => {
-    getData(BASE_URL + MATCHES_URL)
-      .then((data) => {
-        setMatches((matches = data));
-      })
-      .finally(() => {
-        setLoading((loading = false));
-      });
-  };
+	let [matches, setMatches] = useState([]);
+	let [loading, setLoading] = useState(true);
 
-  const deleteMatches = (id) => {
-    setLoading((loading = true));
-    deleteData(id, MATCHES_URL).then((data) => {
-      getMatches();
-    });
-  };
+	const getMatches = () => {
+		getData(BASE_URL + MATCHES_URL, signal)
+			.then((data) => {
+				setMatches((matches = data));
+			})
+			.finally(() => {
+				setLoading((loading = false));
+			});
+	};
 
-  useEffect(() => {
-    getMatches();
-  }, []);
+	const deleteMatches = (id) => {
+		setLoading((loading = true));
+		deleteData(id, MATCHES_URL).then((data) => {
+			getMatches();
+		});
+	};
 
-  return (
-    <div className="page-wrapper">
-      <Header />
-      {loading && <Loading />}
-      <div className="container">
-        <div className="box-history">
-          <div className="history">
-            <div className="history-header">
-              <div className="col">
-                <h2 className="history-header-title">winners</h2>
-              </div>
+	useEffect(() => {
+		getMatches();
+	}, []);
 
-              <div className="col">
-                <h2 className="history-header-title">loosers</h2>
-              </div>
-            </div>
-            <ul className="history-body">
-              {matches.length > 0 && (
-                <HistoryCart matches={matches} deleteMatches={deleteMatches} />
-              )}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="page-wrapper">
+			<Header />
+			{loading && <Loading />}
+			<div className="container">
+				<div className="box-history">
+					<div className="history">
+						<div className="history-header">
+							<div className="col">
+								<h2 className="history-header-title">winners</h2>
+							</div>
+
+							<div className="col">
+								<h2 className="history-header-title">loosers</h2>
+							</div>
+						</div>
+						<ul className="history-body">
+							{matches.length > 0 && (
+								<HistoryCart matches={matches} deleteMatches={deleteMatches} />
+							)}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }

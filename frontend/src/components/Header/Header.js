@@ -2,11 +2,11 @@ import Nav from "../Nav";
 import "./Header.css";
 
 const menuItems = [
-  { link: "/", text: "home" },
-  { link: "/battle", text: "game" },
-  { link: "/gallery", text: "ALL members (ADD Yuor)" },
-  { link: "/statistics", text: "statistics" },
-  { link: "/history", text: "history" },
+  { link: "/", text: "Home" },
+  { link: "/battle", text: "Game" },
+  { link: "/gallery", text: "All members (ADD Your)" },
+  { link: "/statistics", text: "Statistics" },
+  { link: "/history", text: "History" },
 ];
 
 export default function Header(props) {
